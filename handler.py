@@ -9,7 +9,7 @@ LLAMA_URL = f"http://127.0.0.1:{LLAMA_PORT}"
 
 def start_llama_server():
     cmd_args = os.environ.get("LLAMA_SERVER_CMD_ARGS", "")
-    cmd = f"/llama.cpp/build/bin/llama-server --port {LLAMA_PORT} --host 127.0.0.1 {cmd_args}"
+    cmd = f"/app/llama-server --port {LLAMA_PORT} --host 127.0.0.1 {cmd_args}"
     subprocess.Popen(cmd, shell=True)
     
     # Wait until server is ready
